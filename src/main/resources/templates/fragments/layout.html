@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:fragment="layout (template)">
+
+<head>
+    <title>My PetClinic</title>
+    <link rel="stylesheet" th:href="@{/resources/css/petclinic.css}" />
+</head>
+
+<body>
+    <header>
+        <h5>Header</h5>
+    </header>
+
+    <section class="main">
+        <th:block th:insert="${template}" />
+    </section>
+
+    <footer>
+        <h5>Footer</h5>
+    </footer>
+
+</body>
+
+</html>

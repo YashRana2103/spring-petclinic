@@ -1,0 +1,54 @@
+/* --- 1. Basic Reset --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 2. Layout (Header & Footer) --- */
+header, footer {
+    background-color: #e0e0e0; /* Basic Gray */
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+section.main {
+    padding: 20px;
+    flex: 1; /* Pushes footer to bottom */
+}
+
+/* --- 3. Typography --- */
+h2 {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- 4. Table Styling (Basic Grid) --- */
+.vets-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Targets the headers (th) and cells (td) */
+.vets-head-data,
+.vets-data {
+    border: 1px solid #999; /* Standard border */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Simple background for the header row */
+.vets-head-data {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
