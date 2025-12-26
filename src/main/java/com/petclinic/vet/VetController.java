@@ -14,8 +14,16 @@ class VetController {
         this.vets = clinicService;
     }
 
+    /**
+     * Handles HTML requests.
+     * <ol><li><p> Fetches all vets and wraps them in a {@link Vets} object.
+     * <li><p> Adds the wrapper to the Model for Thymeleaf (accessible via "vets"). Thymeleaf inspects the public getter {@code getVetList()} and generates
+     *  the {@code vetList} based on the JavaBean convention.
+     * </ol>
+     * @return the view template "vets/vetList".
+     */
     @GetMapping("/vets.html")
-    public String showVetList(Model model){
+    public String showVetList(Model model) {
         Vets vets = new Vets();
         vets.getVetList().addAll(this.vets.findAll());
         model.addAttribute("vets", vets);
@@ -23,8 +31,10 @@ class VetController {
     }
 
     /**
-     *  adding all Veterinarians from to db into the {@code List<Vet>} of object {@link Vets}
-     *  @return An JSON response body with {@code vetList: List<Vet>}
+     * Handles API requests (JSON/XML).
+     * @return the {@link Vets} wrapper object directly.
+     * Jackson inspects the public getter {@code getVetList()} and generates
+     * the JSON key {@code "vetList": [...]} based on the JavaBean convention.
      */
     @GetMapping("/vets")
     public @ResponseBody Vets showResourcesVetList() {
