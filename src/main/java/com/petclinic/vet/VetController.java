@@ -24,6 +24,7 @@ class VetController {
 
     /**
      *  adding all Veterinarians from to db into the {@code List<Vet>} of object {@link Vets}
+     *  @return An JSON response body with {@code vetList: List<Vet>}
      */
     @GetMapping("/vets")
     public @ResponseBody Vets showResourcesVetList() {
